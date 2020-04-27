@@ -45,7 +45,7 @@ int main(void)
         first = first / 10;
     }
     
-    //if total = 20 and the first two numbers are correct, then print out the credit card name
+    //if first two numbers are correct, then print out the credit card name
     if (first == 34 || first == 37)
     {
       printf("AMEX\n");  
