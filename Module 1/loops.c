@@ -3,23 +3,32 @@
 
 int main(void)
 {
-    for (int i = 0, j = 0; j < 5; j++)
+    for (int i = 0; i < 25; i++)
     {
-        if (i == 5)
-        {return 0;}
-
-        printf("i = %d, j = %d\n", i, j);
-        if (j == 4)
-        {
-            i++;
-            j = -1;
-        }
-    }   
+        printf("i = %d, j = %d\n", i/5, i%5);
+    }
+ 
 }
 
 
-// -------------------------- OLD SOLUTION ----------------------------------- 
+// -------------------------- OLD SOLUTIONS ----------------------------------- 
 // 
+// int main(void)
+// {
+//     for (int i = 0, j = 0; j < 5; j++)
+//     {
+//         if (i == 5)
+//         {return 0;}
+
+//         printf("i = %d, j = %d\n", i, j);
+//         if (j == 4)
+//         {
+//             i++;
+//             j = -1;
+//         }
+//     }   
+// }
+
 // int main(void)
 // {
 //     for (int i = 1, j = 0; i < 6; i++)
