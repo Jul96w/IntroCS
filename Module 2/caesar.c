@@ -7,9 +7,6 @@
 int main(int argc, string argv[])
 {
     
-    // printf("0: %s\n", argv[0]);
-    // printf("1: %s\n", argv[1]);
-    // printf("2: %s\n", argv[2]);
     //take in two arguments
     if (argc != 2)
     {
@@ -18,36 +15,32 @@ int main(int argc, string argv[])
     }
     
     //second argument is key 
-    int key = atoi(argv[1]);
+    int key = atoi(argv[1]) % 26;
     
     //check if key is positive int, otherwise ask again
-    if (key <= 0)
+    if (key < 0)
     {
         printf("Key should be a number greater than 0.\n");
         return 2;
     }
-    // else
-    // {
-    //     printf("Success\n");
-    // }
     
     //ask user for plaintext
-    string plain = get_string("Plaintext: ");
-    printf("Your message was: %s\n", plain);
+    string plain = get_string("plaintext: ");
+    printf("ciphertext: ");
+
     
-    //main part of the function
-    // char c = 'c';
-    // printf("%c", c + 1);
-    
-    // char test = plain[0];
-    int sizeTest =  sizeof(plain)/sizeof(plain[0]);
-    // for (int i = 0, i < )
-    
-    printf("Now your message is: %c\n", test + 1);
-    
-    
-    //output ciphertext
-    
-    //c = (p + k) % 26
-    
+    for (int i = 0; i < strlen(plain); i++)
+    {
+        if (isalpha(plain[i]))
+        {
+            int ascii = isupper(plain[i]) ? 65 : 97;
+            int cipher = (plain[i] - ascii + key) % 26 + ascii;
+            printf("%c", cipher);
+        }
+        else
+        {
+            printf("%c", plain[i]);
+        }
+    }
+    printf("\n");
 }
